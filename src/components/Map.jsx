@@ -1,11 +1,20 @@
 import React from "react";
 import { ComposableMap, Geographies, Geography } from "react-simple-maps";
+import { Card } from "./ui/card";
 
 const geoUrl = "https://cdn.jsdelivr.net/npm/world-atlas@2/countries-110m.json";
 
-const Map = ({ setSelectedCountry }) => {
+const Map = ({ selectedCountries, setSelectedCountries }) => {
+  const handleCountryClick = (countryName) => {
+    if (selectedCountries.includes(countryName)) {
+      setSelectedCountries(selectedCountries.filter((c) => c !== countryName));
+    } else {
+      setSelectedCountries([...selectedCountries, countryName]);
+    }
+  };
+
   return (
-    <div className="w-full h-[70vh] bg-indigo-50 rounded-xl overflow-hidden">
+    <Card className="w-full h-[70vh] overflow-hidden">
       <ComposableMap projection="geoMercator" projectionConfig={{ scale: 100 }}>
         <Geographies geography={geoUrl}>
           {({ geographies }) =>
@@ -13,18 +22,20 @@ const Map = ({ setSelectedCountry }) => {
               <Geography
                 key={geo.rsmKey}
                 geography={geo}
-                onClick={() => setSelectedCountry(geo.properties.name)}
+                onClick={() => handleCountryClick(geo.properties.name)}
                 style={{
                   default: {
-                    fill: "#E5E7EB",
+                    fill: selectedCountries.includes(geo.properties.name)
+                      ? "hsl(var(--primary))"
+                      : "hsl(var(--muted))",
                     outline: "none",
                   },
                   hover: {
-                    fill: "#6366F1",
+                    fill: "hsl(var(--primary) / 0.8)",
                     outline: "none",
                   },
                   pressed: {
-                    fill: "#4F46E5",
+                    fill: "hsl(var(--primary))",
                     outline: "none",
                   },
                 }}
@@ -33,7 +44,7 @@ const Map = ({ setSelectedCountry }) => {
           }
         </Geographies>
       </ComposableMap>
-    </div>
+    </Card>
   );
 };
 

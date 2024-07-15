@@ -1,72 +1,54 @@
+// src/components/CountryInfo.jsx
 import React from "react";
-import {
-  FaGlobe,
-  FaUsers,
-  FaLanguage,
-  FaMoneyBillWave,
-  FaLandmark,
-  FaUtensils,
-  FaCalendarAlt,
-} from "react-icons/fa";
+import { Button } from "./ui/button";
+import { Card, CardContent, CardHeader, CardTitle } from "./ui/card";
+import { FaStar, FaTimes } from "react-icons/fa";
 
-const CountryInfo = ({ info }) => {
+const CountryInfo = ({ info, onRemove, onToggleFavorite, isFavorite }) => {
   if (!info) return null;
 
-  const InfoItem = ({ icon, label, value }) => (
-    <div className="flex items-start mb-4">
-      <div className="flex-shrink-0 w-8 h-8 rounded-full bg-indigo-100 flex items-center justify-center mr-3">
-        {icon}
-      </div>
-      <div>
-        <h3 className="text-sm font-semibold text-gray-600">{label}</h3>
-        <p className="text-gray-800">{value}</p>
-      </div>
-    </div>
-  );
-
   return (
-    <div className="bg-white p-6 rounded-xl shadow-lg">
-      <h2 className="text-3xl font-bold mb-6 text-indigo-800 border-b pb-2">
-        {info.country}
-      </h2>
-      <div className="space-y-4">
-        <InfoItem
-          icon={<FaGlobe className="text-indigo-500" />}
-          label="Capital"
-          value={info.Capital}
-        />
-        <InfoItem
-          icon={<FaUsers className="text-indigo-500" />}
-          label="Population"
-          value={info.Population}
-        />
-        <InfoItem
-          icon={<FaLanguage className="text-indigo-500" />}
-          label="Languages"
-          value={info.Languages}
-        />
-        <InfoItem
-          icon={<FaMoneyBillWave className="text-indigo-500" />}
-          label="Currency"
-          value={info.Currency}
-        />
-        <InfoItem
-          icon={<FaLandmark className="text-indigo-500" />}
-          label="Famous Landmark"
-          value={info["Famous Landmark"]}
-        />
-        <InfoItem
-          icon={<FaUtensils className="text-indigo-500" />}
-          label="Traditional Dish"
-          value={info["Traditional Dish"]}
-        />
-        <InfoItem
-          icon={<FaCalendarAlt className="text-indigo-500" />}
-          label="National Holiday"
-          value={info["National Holiday"]}
-        />
-      </div>
-    </div>
+    <Card className="mb-4">
+      <CardHeader className="flex flex-row items-center justify-between pb-2">
+        <CardTitle className="text-2xl font-bold">{info.country}</CardTitle>
+        <div className="flex space-x-2">
+          <Button
+            variant="ghost"
+            size="icon"
+            onClick={onToggleFavorite}
+            className={isFavorite ? "text-yellow-400" : "text-gray-400"}
+          >
+            <FaStar />
+          </Button>
+          <Button variant="ghost" size="icon" onClick={onRemove}>
+            <FaTimes />
+          </Button>
+        </div>
+      </CardHeader>
+      <CardContent>
+        <p>
+          <strong>Capital:</strong> {info.Capital}
+        </p>
+        <p>
+          <strong>Population:</strong> {info.Population}
+        </p>
+        <p>
+          <strong>Languages:</strong> {info.Languages}
+        </p>
+        <p>
+          <strong>Currency:</strong> {info.Currency}
+        </p>
+        <p>
+          <strong>Famous Landmark:</strong> {info["Famous Landmark"]}
+        </p>
+        <p>
+          <strong>Traditional Dish:</strong> {info["Traditional Dish"]}
+        </p>
+        <p>
+          <strong>National Holiday:</strong> {info["National Holiday"]}
+        </p>
+      </CardContent>
+    </Card>
   );
 };
 
