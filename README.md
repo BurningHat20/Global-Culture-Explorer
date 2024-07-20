@@ -60,11 +60,14 @@ Global Culture Explorer is an interactive web application that allows users to e
 
 ## 📸 Screenshots
 
-![Screenshot 1](https://i.ibb.co/q0sspyG/Global-Culture-Explorar.png)
+![Screenshot 1](https://i.ibb.co/jJcBzfV/Screenshot-2024-07-20-181339.png)
 *Interactive World Map*
 
-![Screenshot 2](https://i.ibb.co/q0sspyG/Global-Culture-Explorar.png)
+![Screenshot 2](https://i.ibb.co/gmLh8Ks/Screenshot-2024-07-20-181539.png)
 *Country Comparison Feature*
+
+![Screenshot 3](https://i.ibb.co/tsVjvKP/Screenshot-2024-07-20-181837.png)
+*Geography Quiz*
 
 ## 🤝 Contributing
 
