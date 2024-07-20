@@ -1,6 +1,6 @@
 # 🌍 Global Culture Explorer
 
-![Global Culture Explorer Banner](https://i.ibb.co/q0sspyG/Global-Culture-Explorar.png)
+![Global Culture Explorer Banner](https://i.ibb.co/pxh7yHw/Global-Culture-Explorar.png)
 
 ## 📖 Overview
 
