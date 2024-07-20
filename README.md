@@ -6,9 +6,9 @@
 
 Global Culture Explorer is an interactive web application that allows users to explore and learn about countries around the world. With an intuitive interface and rich features, it provides an engaging platform for cultural discovery and geographical education.
 
-[![Live Demo](https://img.shields.io/badge/demo-live-green.svg)](https://global-culture-explorer.vercel.app/)
-[![GitHub license](https://img.shields.io/github/license/yourusername/global-culture-explorer.svg)](https://github.com/yourusername/global-culture-explorer/blob/master/LICENSE)
-[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](https://github.com/yourusername/global-culture-explorer/pulls)
+[![Live Demo](https://img.shields.io/badge/demo-live-green.svg)](https://global-culture-explorer.burninghat.tech/)
+[![GitHub license](https://img.shields.io/github/license/BurningHat20/global-culture-explorer.svg)](https://github.com/BurningHat20/global-culture-explorer/blob/master/LICENSE)
+[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](https://github.com/BurningHat20/global-culture-explorer/pulls)
 
 ## 🌟 Features
 
